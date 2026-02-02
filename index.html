@@ -40,7 +40,13 @@ index.html
     </div>
 
     <div class="flex items-center gap-4">
-      <button class="bg-orange-nomade hover:opacity-90 text-white text-xs font-bold py-2 px-4 rounded-full transition-all">
+     <div class="flex items-center gap-4">
+  <select onchange="alert('Traduction en cours de préparation pour : ' + this.value)" class="bg-orange-nomade hover:opacity-90 text-white text-xs font-bold py-2 px-4 rounded-full transition-all outline-none cursor-pointer">
+    <option value="fr">FR ▼</option>
+    <option value="ln">LN (Lingala)</option>
+    <option value="sw">SW (Swahili)</option>
+  </select>
+</div>
         FR ▼
       </button>
     </div>
