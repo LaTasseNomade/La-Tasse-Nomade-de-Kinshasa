@@ -41,11 +41,49 @@ index.html
 
     <div class="flex items-center gap-4">
      <div class="flex items-center gap-4">
-  <select onchange="alert('Traduction en cours de préparation pour : ' + this.value)" class="bg-orange-nomade hover:opacity-90 text-white text-xs font-bold py-2 px-4 rounded-full transition-all outline-none cursor-pointer">
-    <option value="fr">FR ▼</option>
-    <option value="ln">LN (Lingala)</option>
-    <option value="sw">SW (Swahili)</option>
-  </select>
+  <select onchange="updateLanguage(this.value)" class="bg-orange-nomade text-white text-xs font-bold py-2 px-4 rounded-full outline-none cursor-pointer">
+  <option value="fr">FR ▼</option>
+  <option value="en">EN (English)</option>
+  <option value="ln">LN (Lingala)</option>
+  <option value="sw">SW (Swahili)</option>
+  <option value="lu">TSH (Tshiluba)</option>
+  <option value="kg">KG (Kikongo)</option>
+</select>
+
+<script>
+function updateLanguage(lang) {
+  const texts = {
+    fr: {
+      slogan: "La qualité est une évidence.",
+      service: "PREMIER SERVICE DE CAFÉ NOMADE À KINSHASA"
+    },
+    en: {
+      slogan: "Quality is an evidence.",
+      service: "FIRST NOMADIC COFFEE SERVICE IN KINSHASA"
+    },
+    ln: {
+      slogan: "Malamu ezali polele.",
+      service: "MOSALA YA LIBOSO YA CAFE NOMADE NA KINSHASA"
+    },
+    sw: {
+      slogan: "Ubora ni dhahiri.",
+      service: "HUDUMA YA KWANZA YA KAHAWA NOMADE KINSHASA"
+    },
+    lu: {
+      slogan: "Buimpe budi bumueneka.",
+      service: "MUDIMU WA KUMPALA WA COFFEE NOMADE MU KINSHASA"
+    },
+    kg: {
+      slogan: "Kuzitusu kele kieleka.",
+      service: "KISALU YA NTETE YA CAFE NOMADE NA KINSHASA"
+    }
+  };
+
+  // Mise à jour du slogan principal et du texte de service
+  document.querySelector('h1').innerText = texts[lang].slogan;
+  document.querySelector('.text-green-nomade').innerText = texts[lang].service;
+}
+</script>
 </div>
         FR ▼
       </button>
