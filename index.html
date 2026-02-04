@@ -4,7 +4,7 @@ index.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Tasse Nomade - Site Officiel</title>
+    <title>La Tasse Nomade - Kinshasa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .modal { transition: opacity 0.25s ease; }
@@ -16,42 +16,92 @@ index.html
     <header class="p-4 flex justify-between items-center sticky top-0 bg-white z-40 shadow-sm">
         <div class="flex items-center gap-3">
             <img src="1001060621.png" class="w-12 h-12 object-contain rounded-full shadow-sm" alt="Logo">
-            <span class="font-bold text-lg uppercase">La Tasse Nomade</span>
+            <span class="font-bold text-lg uppercase tracking-tighter">La Tasse Nomade</span>
         </div>
-        <select id="lang-select" onchange="updateLanguage(this.value)" class="bg-[#6B8E23] text-white text-xs font-bold py-2 px-3 rounded-md">
+        <select id="lang-select" onchange="updateLanguage(this.value)" class="bg-[#6B8E23] text-white text-xs font-bold py-2 px-3 rounded-md outline-none">
             <option value="fr">FR</option>
             <option value="ln">LN</option>
+            <option value="en">EN</option>
+            <option value="sw">SW</option>
+            <option value="lu">TSH</option>
+            <option value="kg">KG</option>
         </select>
     </header>
 
-    <section class="px-6 py-8 flex flex-col items-center text-center">
+    <section class="px-6 py-8 flex flex-col items-center bg-white text-center">
         <div class="w-full max-w-sm rounded-[2rem] overflow-hidden shadow-2xl mb-8 border-4 border-white">
-            <img src="1001085215.png" class="w-full h-auto" alt="Affiche Menu">
+            <img src="1001085215.png" class="w-full h-auto object-cover" alt="Affiche Menu">
         </div>
         
-        <h1 id="hero-title" class="text-3xl font-extrabold mb-6">
-            Chez nous la qualité est une évidence. L’hygiène un engagement.
-        </h1>
-
-        <button onclick="toggleModal('menu-modal')" class="w-full max-w-xs bg-[#6B8E23] text-white py-4 rounded-full font-bold mb-4">
-            NOTRE MENU ▼
-        </button>
+        <div class="max-w-2xl">
+            <h1 id="hero-title" class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Chez nous la qualité est une évidence. L’hygiène un engagement.
+            </h1>
+            <div class="flex flex-col gap-3 items-center">
+                <button onclick="toggleModal('menu-modal')" class="w-full max-w-xs bg-[#6B8E23] text-white py-4 rounded-full font-bold text-lg shadow-xl uppercase">
+                    <span id="btn-menu">NOTRE MENU</span> ▼
+                </button>
+                <a href="https://wa.me/243820646482" class="w-full max-w-xs border-2 border-gray-100 text-gray-900 py-4 rounded-full font-bold text-lg text-center">
+                    <span id="btn-order">Commander</span>
+                </a>
+            </div>
+        </div>
     </section>
+
+    <section class="py-16 px-6 max-w-5xl mx-auto border-t border-gray-50">
+        <h2 class="text-[#6B8E23] font-bold text-2xl mb-8 uppercase text-left">Engagement Hygiène</h2>
+        <div class="grid md:grid-cols-2 gap-8 text-left items-center">
+            <ul class="space-y-6">
+                <li onclick="toggleModal('gallery-modal')" class="flex items-center gap-3 font-bold text-xl text-[#6B8E23] cursor-pointer hover:underline decoration-2">
+                    <span class="w-4 h-4 bg-[#6B8E23] rounded-full"></span> 
+                    <span>Présentation soignée (Voir photos)</span>
+                </li>
+            </ul>
+            <img src="1001074131.png" class="rounded-2xl h-48 w-full object-cover shadow-lg">
+        </div>
+    </section>
+
+    <div id="menu-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50 p-4">
+        <div class="absolute w-full h-full bg-black/90" onclick="toggleModal('menu-modal')"></div>
+        <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl z-50 overflow-hidden relative text-center">
+            <img src="1001085215.png" class="w-full h-auto">
+            <button onclick="toggleModal('menu-modal')" class="w-full bg-[#6B8E23] text-white font-bold py-4 uppercase">Fermer</button>
+        </div>
+    </div>
 
     <div id="gallery-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50 p-4">
         <div class="absolute w-full h-full bg-black/90" onclick="toggleModal('gallery-modal')"></div>
-        <div class="bg-white w-full max-w-2xl rounded-3xl z-50 overflow-y-auto max-h-[90vh] p-6 text-center">
-            <img src="1001074131.png" class="w-full rounded-xl mb-4" alt="Charrette">
-            <img src="1001085212.png" class="w-full rounded-xl" alt="Vendeur">
-            <button onclick="toggleModal('gallery-modal')" class="mt-6 w-full bg-gray-900 text-white py-4 rounded-xl">RETOUR</button>
+        <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl z-50 overflow-y-auto max-h-[90vh] relative p-6 text-center">
+            <h3 class="font-bold text-[#6B8E23] mb-6 uppercase text-xl">Notre Matériel & Équipe</h3>
+            <div class="grid gap-6">
+                <img src="1001074131.png" class="w-full rounded-xl shadow-md" alt="Charrette">
+                <img src="1001085212.png" class="w-full rounded-xl shadow-md" alt="Vendeur">
+            </div>
+            <button onclick="toggleModal('gallery-modal')" class="mt-6 w-full bg-gray-900 text-white font-bold py-4 rounded-xl uppercase">Retour</button>
         </div>
     </div>
+
+    <footer class="bg-gray-900 text-white py-10 text-center text-[10px] tracking-[0.2em] uppercase">
+        <p>© 2026 La Tasse Nomade - Kinshasa</p>
+    </footer>
 
     <script>
         function toggleModal(id) {
             const modal = document.getElementById(id);
             modal.classList.toggle('opacity-0');
             modal.classList.toggle('pointer-events-none');
+            document.body.classList.toggle('modal-active');
+        }
+
+        function updateLanguage(lang) {
+            const dict = {
+                fr: { hero: "Chez nous la qualité est une évidence. L’hygiène un engagement.", btnM: "NOTRE MENU", btnO: "Commander" },
+                ln: { hero: "Na biso malamu ezali polele. Bopeto ezali ndai na biso.", btnM: "BILOKO NA BISO", btnO: "Tinda commande" }
+            };
+            const data = dict[lang] || dict['fr'];
+            document.getElementById('hero-title').innerText = data.hero;
+            document.getElementById('btn-menu').innerText = data.btnM;
+            document.getElementById('btn-order').innerText = data.btnO;
         }
     </script>
 </body>
