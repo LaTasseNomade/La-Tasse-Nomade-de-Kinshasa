@@ -34,7 +34,7 @@ index.html
         </div>
         <div class="max-w-2xl">
             <h1 id="hero-title" class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-                La qualité est une évidence, l'hygiène est un engagement.
+                Chez nous la qualité est une évidence. L’hygiène un engagement.
             </h1>
             <div class="flex flex-col gap-3 items-center">
                 <button onclick="toggleModal('menu-modal')" class="w-full max-w-xs bg-[#6B8E23] text-white py-4 rounded-full font-bold text-lg shadow-xl uppercase">
@@ -47,7 +47,7 @@ index.html
         </div>
     </section>
 
-    <section class="py-16 px-6 max-w-5xl mx-auto">
+    <section class="py-16 px-6 max-w-5xl mx-auto border-t border-gray-50">
         <h2 class="text-[#6B8E23] font-black text-2xl mb-8 uppercase">Engagement Hygiène</h2>
         <div class="grid md:grid-cols-2 gap-8">
             <ul class="space-y-6">
@@ -68,7 +68,7 @@ index.html
 
     <div id="menu-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50 p-4">
         <div class="absolute w-full h-full bg-black/90" onclick="toggleModal('menu-modal')"></div>
-        <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl z-50 overflow-hidden relative">
+        <div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl z-50 overflow-hidden relative text-center">
             <img src="1001085215.png" class="w-full h-auto">
             <button onclick="toggleModal('menu-modal')" class="w-full bg-[#6B8E23] text-white font-bold py-4 uppercase">Fermer</button>
         </div>
@@ -77,10 +77,10 @@ index.html
     <div id="gallery-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50 p-4">
         <div class="absolute w-full h-full bg-black/90" onclick="toggleModal('gallery-modal')"></div>
         <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl z-50 overflow-y-auto max-h-[90vh] relative p-4">
-            <h3 class="text-center font-bold text-[#6B8E23] mb-4 uppercase">Notre Présentation</h3>
+            <h3 class="text-center font-bold text-[#6B8E23] mb-4 uppercase">Notre Matériel & Équipe</h3>
             <div class="grid gap-4">
-                <img src="1001074131.png" class="w-full rounded-xl" alt="Charrette Nomade">
-                <img src="1001085212.png" class="w-full rounded-xl" alt="Vendeur Nomade">
+                <img src="1001074131.png" class="w-full rounded-xl shadow-md" alt="Charrette">
+                <img src="1001085212.png" class="w-full rounded-xl shadow-md" alt="Vendeur">
             </div>
             <button onclick="toggleModal('gallery-modal')" class="mt-4 w-full bg-gray-900 text-white font-bold py-4 rounded-xl uppercase">Retour</button>
         </div>
@@ -100,8 +100,8 @@ index.html
 
         function updateLanguage(lang) {
             const dict = {
-                fr: { hero: "La qualité est une évidence, l'hygiène est un engagement.", btnM: "NOTRE MENU", btnO: "Commander" },
-                ln: { hero: "Malamu ezali polele, bopeto ezali ndai na biso.", btnM: "BILOKO NA BISO", btnO: "Tinda commande" }
+                fr: { hero: "Chez nous la qualité est une évidence. L’hygiène un engagement.", btnM: "NOTRE MENU", btnO: "Commander" },
+                ln: { hero: "Na biso malamu ezali polele. Bopeto ezali ndai na biso.", btnM: "BILOKO NA BISO", btnO: "Tinda commande" }
             };
             const data = dict[lang] || dict['fr'];
             document.getElementById('hero-title').innerText = data.hero;
