@@ -9,54 +9,171 @@ index.html
     <style>
         .modal { transition: opacity 0.25s ease; }
         body.modal-active { overflow: hidden; }
-        .bg-nomade { background-color: #6B8E23; }
-        .text-nomade { color: #6B8E23; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('1001074131.png'); background-size: cover; background-position: center; }
+        .decor-item { position: absolute; opacity: 0.15; pointer-events: none; z-index: 0; font-size: 3rem; }
     </style>
 </head>
-<body class="bg-white font-sans text-gray-900">
+<body class="bg-white font-sans text-gray-900 relative overflow-x-hidden">
 
-    <header class="p-4 flex justify-between items-center sticky top-0 bg-white z-40 shadow-sm border-b border-gray-50">
-        <div class="flex items-center gap-2">
-            <img src="IMG_20260116_012845.png" class="w-10 h-10 object-contain" alt="Logo">
-            <span class="font-bold text-lg uppercase tracking-tighter">La Tasse Nomade</span>
-        </div>
-        <select id="lang-select" onchange="updateLanguage(this.value)" class="bg-[#6B8E23] text-white text-xs font-bold py-2 px-3 rounded-md outline-none border-none">
-            <option value="fr">FR</option>
-            <option value="ln">LN</option>
-            <option value="en">EN</option>
-            <option value="sw">SW</option>
-            <option value="lu">TSH</option>
-            <option value="kg">KG</option>
-        </select>
-    </header>
+    <div class="decor-item top-10 left-10">🍃</div>
+    <div class="decor-item top-10 right-10">🍋</div>
+    <div class="decor-item bottom-10 left-10">🫘</div>
+    <div class="decor-item bottom-10 right-10">🌿</div>
 
-    <section class="px-6 py-8 flex flex-col items-center bg-white text-center">
-        <div class="w-full max-w-sm rounded-[2rem] overflow-hidden shadow-2xl mb-8 border-4 border-white">
-            <img src="1001085215.png" class="w-full h-auto object-cover" alt="Menu du jour">
+    <header class="p-4 flex justify-between items-center sticky top-0 bg-white/95 backdrop-blur-sm z-40 shadow-sm">
+        <div class="flex items-center gap-3">
+            <img src="1001060621.png" class="w-12 h-12 object-contain" alt="Logo">
+            <nav class="hidden lg:flex gap-6 font-bold text-[10px] uppercase tracking-widest text-gray-500">
+                <a href="#" id="nav-home" class="hover:text-[#6B8E23]">Accueil</a>
+                <a href="#" id="nav-about" class="hover:text-[#6B8E23]">À propos</a>
+                <a href="#" id="nav-blog" class="hover:text-[#6B8E23]">Blog du Grain</a>
+                <a href="#" id="nav-menu" class="hover:text-[#6B8E23]">Menus</a>
+            </nav>
         </div>
         
-        <div class="max-w-2xl">
-            <h1 id="hero-title" class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-                Chez nous la qualité est une évidence. L’hygiène un engagement.
+        <div class="flex items-center gap-2">
+            <select id="lang-select" onchange="updateLanguage(this.value)" class="bg-gray-100 text-gray-900 text-[10px] font-black py-2 px-3 rounded-md outline-none border border-gray-200">
+                <option value="fr">FRANÇAIS</option>
+                <option value="ln">LINGALA</option>
+                <option value="en">ENGLISH</option>
+            </select>
+            <a href="https://wa.me/243820646482" id="btn-res" class="bg-[#32CD32] text-white text-[10px] font-black px-4 py-2 rounded-full uppercase shadow-md">
+                Réservation
+            </a>
+        </div>
+    </header>
+
+    <section class="hero-bg min-h-[80vh] flex flex-col items-center justify-center text-center px-6 relative">
+        <div class="z-10">
+            <h2 id="hero-subtitle" class="text-[#6B8E23] text-3xl md:text-5xl mb-4 italic" style="font-family: 'Brush Script MT', cursive;">
+                La Tasse Nomade de Kinshasa, Café ambulant !
+            </h2>
+            <h1 id="hero-title" class="text-white text-2xl md:text-5xl font-black max-w-4xl leading-tight mb-8">
+                Chez nous, La qualité est une évidence. L'hygiène un engagement.
             </h1>
-            <div class="flex flex-col gap-3 items-center">
-                <button onclick="toggleModal('menu-modal')" class="w-full max-w-xs bg-[#6B8E23] text-white py-4 rounded-full font-bold text-lg shadow-xl uppercase hover:scale-105 transition-transform">
-                    <span id="btn-menu">NOTRE MENU</span> ▼
-                </button>
-                <a href="https://wa.me/243820646482" class="w-full max-w-xs border-2 border-gray-100 text-gray-900 py-4 rounded-full font-bold text-lg text-center hover:bg-gray-50 transition-colors">
-                    <span id="btn-order">Commander</span>
-                </a>
+            <button onclick="toggleModal('menu-modal')" id="btn-menu-hero" class="bg-[#6B8E23] text-white px-10 py-4 rounded-full font-bold text-lg shadow-2xl uppercase transition-all">
+                NOTRE MENU ▼
+            </button>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 max-w-5xl mx-auto text-center relative z-10">
+        <h3 id="follow-title" class="font-black text-2xl uppercase mb-12">Suivez la Charette</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 border rounded-2xl bg-white/50">
+                <h4 class="font-bold text-blue-600 mb-2">Facebook</h4>
+                <p id="fb-desc" class="text-sm text-gray-500">Avis & Moments de convivialité</p>
+            </div>
+            <div class="p-6 border rounded-2xl shadow-xl border-[#6B8E23] bg-white">
+                <h4 class="font-bold text-sky-500 mb-2">Telegram</h4>
+                <p id="tg-desc" class="text-sm text-gray-900 font-bold">Position GPS en temps réel</p>
+            </div>
+            <div class="p-6 border rounded-2xl bg-white/50">
+                <h4 class="font-bold text-pink-600 mb-2">Instagram</h4>
+                <p id="ig-desc" class="text-sm text-gray-500">Photos esthétiques & Reels</p>
             </div>
         </div>
     </section>
 
-    <section class="py-16 px-6 max-w-5xl mx-auto border-t border-gray-50">
-        <h2 class="text-[#6B8E23] font-black text-2xl mb-8 uppercase text-left">Engagement Hygiène</h2>
-        <div class="grid md:grid-cols-2 gap-8 text-left items-center">
-            <ul class="space-y-6">
-                <li onclick="toggleModal('gallery-modal')" class="flex items-center gap-3 font-bold text-xl text-[#6B8E23] cursor-pointer hover:underline decoration-2 group">
-                    <span class="w-4 h-4 bg-[#6B8E23] rounded-full group-hover:scale-125 transition-transform"></span> 
-                    <span>Présentation soignée (Voir l'équipe)</span>
-                </li>
-            </ul>
-            
+    <footer class="bg-gray-900 text-white py-16 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <button id="foot-about" class="w-full md:w-auto px-8 py-4 border border-white font-bold rounded-full uppercase text-xs">À propos de nous</button>
+            <img src="1001060621.png" class="w-20 opacity-30 grayscale">
+            <button id="foot-contact" class="w-full md:w-auto px-8 py-4 bg-[#B2FF66] text-black font-black rounded-full uppercase text-xs">Contact</button>
+        </div>
+        <div id="copyright" class="mt-12 text-center text-[9px] text-gray-600 tracking-[0.4em] uppercase">
+            © 2026 La Tasse Nomade - Le Canal des Abonnés
+        </div>
+    </footer>
+
+    <div id="menu-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50 p-4">
+        <div class="absolute w-full h-full bg-black/95" onclick="toggleModal('menu-modal')"></div>
+        <div class="bg-white w-full max-w-lg rounded-3xl overflow-hidden relative shadow-2xl">
+            <img src="1001085215.png" class="w-full h-auto">
+            <button onclick="toggleModal('menu-modal')" id="btn-close-modal" class="w-full bg-[#6B8E23] text-white font-bold py-4 uppercase">Fermer</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.toggle('opacity-0');
+            modal.classList.toggle('pointer-events-none');
+            document.body.classList.toggle('modal-active');
+        }
+
+        function updateLanguage(lang) {
+            const dict = {
+                fr: {
+                    home: "Accueil", about: "À propos", blog: "Blog du Grain", menu: "Menus",
+                    res: "Réservation",
+                    subtitle: "La Tasse Nomade de Kinshasa, Café ambulant !",
+                    hero: "Chez nous, La qualité est une évidence. L'hygiène un engagement.",
+                    btnMenu: "NOTRE MENU ▼",
+                    follow: "Suivez la Charette",
+                    fb: "Avis & Moments de convivialité",
+                    tg: "Position GPS en temps réel",
+                    ig: "Photos esthétiques & Reels",
+                    fAbout: "À propos de nous",
+                    fContact: "Contact",
+                    copy: "© 2026 La Tasse Nomade - Le Canal des Abonnés",
+                    close: "Fermer"
+                },
+                ln: {
+                    home: "Ebandeli", about: "Sango na biso", blog: "Sango ya Café", menu: "Bileyi",
+                    res: "Kobomba esika",
+                    subtitle: "La Tasse Nomade ya Kinshasa, Café ya kotambola !",
+                    hero: "Na biso malamu ezali polele. Bopeto ezali ndai na biso.",
+                    btnMenu: "BILOKO NA BISO ▼",
+                    follow: "Landa Charette",
+                    fb: "Makanisi & Bosepeli",
+                    tg: "Esika tozali (GPS) mbala moko",
+                    ig: "Bilili ya kitoko & Reels",
+                    fAbout: "Sango na biso",
+                    fContact: "Solola na biso",
+                    copy: "© 2026 La Tasse Nomade - Basali ya ndai",
+                    close: "Kanga"
+                },
+                en: {
+                    home: "Home", about: "About Us", blog: "Coffee Blog", menu: "Menus",
+                    res: "Booking",
+                    subtitle: "The Nomad Cup of Kinshasa, Mobile Coffee shop!",
+                    hero: "With us, Quality is a given. Hygiene is a commitment.",
+                    btnMenu: "OUR MENU ▼",
+                    follow: "Follow the Cart",
+                    fb: "Reviews & Friendly Moments",
+                    tg: "Real-time GPS Location",
+                    ig: "Aesthetic Photos & Reels",
+                    fAbout: "About Us",
+                    fContact: "Contact Us",
+                    copy: "© 2026 The Nomad Cup - Subscriber Channel",
+                    close: "Close"
+                }
+            };
+
+            const d = dict[lang];
+            // Navigation
+            document.getElementById('nav-home').innerText = d.home;
+            document.getElementById('nav-about').innerText = d.about;
+            document.getElementById('nav-blog').innerText = d.blog;
+            document.getElementById('nav-menu').innerText = d.menu;
+            document.getElementById('btn-res').innerText = d.res;
+            // Hero
+            document.getElementById('hero-subtitle').innerText = d.subtitle;
+            document.getElementById('hero-title').innerText = d.hero;
+            document.getElementById('btn-menu-hero').innerText = d.btnMenu;
+            // Social
+            document.getElementById('follow-title').innerText = d.follow;
+            document.getElementById('fb-desc').innerText = d.fb;
+            document.getElementById('tg-desc').innerText = d.tg;
+            document.getElementById('ig-desc').innerText = d.ig;
+            // Footer
+            document.getElementById('foot-about').innerText = d.fAbout;
+            document.getElementById('foot-contact').innerText = d.fContact;
+            document.getElementById('copyright').innerText = d.copy;
+            // Modal
+            document.getElementById('btn-close-modal').innerText = d.close;
+        }
+    </script>
+</body>
+</html>
