@@ -8,155 +8,65 @@ index.html
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .modal { transition: opacity 0.25s ease; }
-        body.modal-active { overflow: hidden; }
-        /* Correction du fond : Utilisation de l'image réelle de la charette */
         .hero-bg { 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url('1001074131.png'); 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('1001074131.png'); 
             background-size: cover; 
             background-position: center; 
         }
-        .decor-item { position: absolute; opacity: 0.2; pointer-events: none; z-index: 0; font-size: 2.5rem; }
     </style>
 </head>
-<body class="bg-white font-sans text-gray-900 relative overflow-x-hidden">
-
-    <div class="decor-item top-20 left-5">🍃</div>
-    <div class="decor-item top-40 right-5">🍋</div>
-    <div class="decor-item bottom-20 left-10">🫘</div>
-    <div class="decor-item bottom-40 right-10">🌿</div>
+<body class="bg-white font-sans text-gray-900 overflow-x-hidden">
 
     <header class="p-4 flex justify-between items-center sticky top-0 bg-white z-40 shadow-sm">
         <div class="flex items-center gap-3">
             <img src="1001060621.png" class="w-10 h-10 object-contain rounded-full" alt="Logo">
-            <nav class="hidden lg:flex gap-4 font-bold text-[10px] uppercase tracking-tighter text-gray-500">
+            <nav class="hidden lg:flex gap-4 font-bold text-[10px] uppercase text-gray-500">
                 <a href="#" id="nav-home">Accueil</a>
                 <a href="#" id="nav-about">À propos</a>
-                <a href="#" id="nav-blog">Blog du Grain</a>
                 <a href="#" id="nav-menu">Menus</a>
             </nav>
         </div>
-        
         <div class="flex items-center gap-2">
-            <select id="lang-select" onchange="updateLanguage(this.value)" class="bg-gray-100 text-[10px] font-bold py-2 px-2 rounded border border-gray-200">
+            <select id="lang-select" onchange="updateLanguage(this.value)" class="bg-gray-100 text-[10px] font-bold p-2 rounded border">
                 <option value="fr">FRANÇAIS</option>
                 <option value="ln">LINGALA</option>
                 <option value="en">ENGLISH</option>
             </select>
-            <a href="https://wa.me/243820646482" id="btn-res" class="bg-[#32CD32] text-white text-[10px] font-black px-4 py-2 rounded-full uppercase shadow-md">
-                Réservation
-            </a>
+            <button id="btn-res" class="bg-[#32CD32] text-white text-[10px] font-black px-4 py-2 rounded-full uppercase">Réservation</button>
         </div>
     </header>
 
-    <section class="hero-bg min-h-[70vh] flex flex-col items-center justify-center text-center px-6 relative">
-        <div class="z-10">
-            <h2 id="hero-subtitle" class="text-[#6B8E23] text-2xl md:text-4xl mb-4 italic font-serif">
-                La Tasse Nomade de Kinshasa, Café ambulant !
-            </h2>
-            <h1 id="hero-title" class="text-white text-3xl md:text-5xl font-black max-w-4xl leading-tight mb-8">
-                Chez nous, La qualité est une évidence. L'hygiène un engagement.
-            </h1>
-            <button onclick="toggleModal('menu-modal')" id="btn-menu-hero" class="bg-[#6B8E23] text-white px-10 py-4 rounded-full font-bold text-lg shadow-2xl uppercase">
-                NOTRE MENU ▼
-            </button>
-        </div>
+    <section class="hero-bg min-h-[60vh] flex flex-col items-center justify-center text-center px-6">
+        <h2 id="hero-subtitle" class="text-[#6B8E23] text-2xl mb-4 italic">La Tasse Nomade de Kinshasa, Café ambulant !</h2>
+        <h1 id="hero-title" class="text-white text-3xl font-black max-w-4xl mb-8">Chez nous, La qualité est une évidence. L'hygiène un engagement.</h1>
+        <button id="btn-menu-hero" class="bg-[#6B8E23] text-white px-10 py-4 rounded-full font-bold uppercase">NOTRE MENU ▼</button>
     </section>
 
-    <section class="py-16 px-6 max-w-5xl mx-auto text-center relative z-10">
-        <h3 id="follow-title" class="font-black text-2xl uppercase mb-10">Suivez la Charette</h3>
-        <div class="space-y-4 max-w-md mx-auto">
-            <div class="p-6 border rounded-2xl bg-gray-50">
-                <h4 class="font-bold text-blue-600">Facebook</h4>
-                <p id="fb-desc" class="text-xs text-gray-500">Avis & Moments de convivialité</p>
-            </div>
-            <div class="p-6 border-2 border-[#6B8E23] rounded-2xl bg-white shadow-lg">
-                <h4 class="font-bold text-sky-500">Telegram</h4>
-                <p id="tg-desc" class="text-sm font-bold text-gray-900">Position GPS en temps réel</p>
-            </div>
-            <div class="p-6 border rounded-2xl bg-gray-50">
-                <h4 class="font-bold text-pink-600">Instagram</h4>
-                <p id="ig-desc" class="text-xs text-gray-500">Photos esthétiques & Reels</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-[#0a0f1a] text-white pt-16 pb-8 px-6 text-center">
-        <button id="foot-about" class="w-full max-w-xs py-4 border border-white font-bold rounded-full uppercase text-xs mb-10">À propos de nous</button>
-        
-        <div class="mb-10 flex justify-center">
+    <footer class="bg-[#0a0f1a] text-white py-16 px-6 text-center">
+        <button id="foot-about" class="w-full max-w-xs py-4 border border-white rounded-full uppercase text-xs mb-8">À propos de nous</button>
+        <div class="mb-8 flex justify-center">
             <img src="1001060621.png" class="w-16 opacity-40 grayscale" alt="Logo Footer">
         </div>
-
-        <button id="foot-contact" class="w-full max-w-xs py-4 bg-[#B2FF66] text-black font-black rounded-full uppercase text-xs mb-12">Contact</button>
-        
-        <div id="copyright" class="text-[8px] text-gray-500 tracking-widest uppercase border-t border-gray-800 pt-8">
-            © 2026 La Tasse Nomade - Le Canal des Abonnés
-        </div>
+        <button id="foot-contact" class="bg-[#B2FF66] text-black w-full max-w-xs py-4 rounded-full font-black uppercase text-xs">Contact</button>
     </footer>
 
-    <div id="menu-modal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-50 p-4">
-        <div class="absolute w-full h-full bg-black/95" onclick="toggleModal('menu-modal')"></div>
-        <div class="bg-white w-full max-w-lg rounded-3xl overflow-hidden relative">
-            <img src="1001085215.png" class="w-full h-auto">
-            <button onclick="toggleModal('menu-modal')" id="btn-close" class="w-full bg-[#6B8E23] text-white font-bold py-4 uppercase">Fermer</button>
-        </div>
-    </div>
-
     <script>
-        function toggleModal(id) {
-            const modal = document.getElementById(id);
-            modal.classList.toggle('opacity-0');
-            modal.classList.toggle('pointer-events-none');
-        }
-
         function updateLanguage(lang) {
             const dict = {
-                fr: {
-                    h: "Accueil", a: "À propos", b: "Blog du Grain", m: "Menus", r: "Réservation",
-                    st: "La Tasse Nomade de Kinshasa, Café ambulant !",
-                    ht: "Chez nous, La qualité est une évidence. L'hygiène un engagement.",
-                    bm: "NOTRE MENU ▼", f: "Suivez la Charette",
-                    fb: "Avis & Moments de convivialité", tg: "Position GPS en temps réel", ig: "Photos esthétiques & Reels",
-                    fa: "À propos de nous", fc: "Contact", cl: "Fermer",
-                    cp: "© 2026 La Tasse Nomade - Le Canal des Abonnés"
-                },
-                ln: {
-                    h: "Ebandeli", a: "Sango na biso", b: "Sango ya Café", m: "Bileyi", r: "Kobomba esika",
-                    st: "La Tasse Nomade ya Kinshasa, Café ya kotambola !",
-                    ht: "Na biso malamu ezali polele. Bopeto ezali ndai na biso.",
-                    bm: "BILOKO NA BISO ▼", f: "Landa Charette",
-                    fb: "Makanisi & Bosepeli", tg: "Esika tozali (GPS) mbala moko", ig: "Bilili ya kitoko & Reels",
-                    fa: "Sango na biso", fc: "Solola na biso", cl: "Kanga",
-                    cp: "© 2026 La Tasse Nomade - Basali ya ndai"
-                },
-                en: {
-                    h: "Home", a: "About Us", b: "Coffee Blog", m: "Menus", r: "Booking",
-                    st: "The Nomad Cup of Kinshasa, Mobile Coffee shop!",
-                    ht: "With us, Quality is a given. Hygiene is a commitment.",
-                    bm: "OUR MENU ▼", f: "Follow the Cart",
-                    fb: "Reviews & Friendly Moments", tg: "Real-time GPS Location", ig: "Aesthetic Photos & Reels",
-                    fa: "About Us", fc: "Contact Us", cl: "Close",
-                    cp: "© 2026 The Nomad Cup - Subscriber Channel"
-                }
+                fr: { h: "Accueil", a: "À propos", m: "Menus", r: "Réservation", st: "La Tasse Nomade de Kinshasa, Café ambulant !", ht: "Chez nous, La qualité est une évidence. L'hygiène un engagement.", bm: "NOTRE MENU ▼", fa: "À propos de nous", fc: "Contact" },
+                ln: { h: "Ebandeli", a: "Sango na biso", m: "Bileyi", r: "Kobomba esika", st: "La Tasse Nomade ya Kinshasa, Café ya kotambola !", ht: "Na biso malamu ezali polele. Bopeto ezali ndai na biso.", bm: "BILOKO NA BISO ▼", fa: "Sango na biso", fc: "Solola na biso" },
+                en: { h: "Home", a: "About Us", m: "Menus", r: "Booking", st: "The Nomad Cup of Kinshasa, Mobile Coffee shop!", ht: "With us, Quality is a given. Hygiene is a commitment.", bm: "OUR MENU ▼", fa: "About Us", fc: "Contact Us" }
             };
-
             const d = dict[lang];
             document.getElementById('nav-home').innerText = d.h;
             document.getElementById('nav-about').innerText = d.a;
-            document.getElementById('nav-blog').innerText = d.b;
             document.getElementById('nav-menu').innerText = d.m;
             document.getElementById('btn-res').innerText = d.r;
             document.getElementById('hero-subtitle').innerText = d.st;
             document.getElementById('hero-title').innerText = d.ht;
             document.getElementById('btn-menu-hero').innerText = d.bm;
-            document.getElementById('follow-title').innerText = d.f;
-            document.getElementById('fb-desc').innerText = d.fb;
-            document.getElementById('tg-desc').innerText = d.tg;
-            document.getElementById('ig-desc').innerText = d.ig;
             document.getElementById('foot-about').innerText = d.fa;
             document.getElementById('foot-contact').innerText = d.fc;
-            document.getElementById('btn-close').innerText = d.cl;
-            document.getElementById('copyright').innerText = d.cp;
         }
     </script>
 </body>
