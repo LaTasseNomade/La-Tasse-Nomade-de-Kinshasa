@@ -11,95 +11,122 @@ index.html
             theme: {
                 extend: {
                     colors: {
-                        'orange-nomade': '#F39200',
-                        'green-nomade': '#009640',
-                        'dark-nomade': '#0B1323',
+                        'nomade-green': '#6B8E23',
+                        'nomade-light-bg': '#F4F7F2',
+                        'nomade-dark': '#2D3436'
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-white font-sans text-dark-nomade">
+<body class="bg-white font-sans text-nomade-dark">
 
-    <header class="p-4 flex justify-between items-center bg-white sticky top-0 z-50 shadow-sm">
-        <div class="flex items-center gap-3">
-            <div class="w-12 h-12 bg-orange-nomade rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-sm">T</div>
-            <div class="flex flex-col leading-tight font-bold text-lg uppercase tracking-tight">
-                <span>LA TASSE</span>
-                <span>NOMADE</span>
-            </div>
+    <header class="p-4 flex justify-between items-center sticky top-0 bg-white z-50 shadow-sm">
+        <div class="flex items-center gap-2">
+            <img src="IMG_20260116_012845.png" class="w-10 h-10 object-contain">
+            <span class="font-bold text-lg uppercase">La Tasse Nomade</span>
         </div>
-        
-        <select id="lang-select" onchange="updateLanguage(this.value)" class="bg-orange-nomade text-white text-xs font-bold py-2 px-4 rounded-full outline-none shadow-md cursor-pointer">
+        <select id="lang-select" onchange="updateLanguage(this.value)" class="bg-nomade-green text-white text-xs font-bold py-2 px-3 rounded-md outline-none">
             <option value="fr">FR ▼</option>
-            <option value="ln">LN (Lingala)</option>
-            <option value="en">EN (English)</option>
-            <option value="sw">SW (Swahili)</option>
-            <option value="lu">TSH (Tshiluba)</option>
-            <option value="kg">KG (Kikongo)</option>
+            <option value="ln">LN</option>
+            <option value="en">EN</option>
+            <option value="sw">SW</option>
+            <option value="lu">TSH</option>
+            <option value="kg">KG</option>
         </select>
     </header>
 
-    <main class="px-6 py-4 flex flex-col items-center">
-        
-        <div class="w-full max-w-sm aspect-square rounded-[3rem] overflow-hidden mb-8 shadow-2xl border-4 border-white">
-            <img src="IMG_20260116_012845.png" class="w-full h-full object-contain bg-[#fdf8f1]" alt="Logo La Tasse Nomade">
+    <section class="relative h-[60vh] flex items-center bg-gray-100 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="IMG_20260201_232921.png" class="w-full h-full object-cover opacity-80">
         </div>
-
-        <div id="service-tag" class="bg-green-50 text-green-nomade text-[10px] font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-            PREMIER SERVICE DE CAFÉ NOMADE À KINSHASA
-        </div>
-
-        <h1 id="main-title" class="text-4xl font-extrabold text-center mb-10 leading-tight">
-            La qualité est une évidence.
-        </h1>
-
-        <div class="w-full max-w-xs space-y-4 mb-16">
-            <button class="w-full bg-dark-nomade text-white py-5 rounded-full font-bold text-lg flex justify-center items-center gap-2 shadow-xl">
-                <span id="txt-menu">NOTRE MENU</span> <span class="text-xs">▼</span>
-            </button>
-            <a href="https://wa.me/243820646482" class="w-full border-2 border-slate-100 text-dark-nomade py-5 rounded-full font-bold text-lg flex justify-center items-center gap-2 block text-center">
-                <span id="txt-order">Commander</span> <span class="text-xs">▼</span>
-            </a>
-        </div>
-
-        <div class="grid grid-cols-1 gap-10 w-full max-w-md pb-20">
-            <div class="text-center group">
-                <div class="overflow-hidden rounded-[2.5rem] mb-4 shadow-lg border-2 border-slate-50">
-                    <img src="IMG_20260201_232921.png" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <p id="spec-1" class="font-bold text-2xl">Nos Cafés</p>
-            </div>
-            <div class="text-center group">
-                <div class="overflow-hidden rounded-[2.5rem] mb-4 shadow-lg border-2 border-slate-50">
-                    <img src="IMG_20260201_233025.png" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <p id="spec-2" class="font-bold text-2xl text-green-nomade">Nos Thés</p>
+        <div class="relative z-10 px-8 max-w-2xl">
+            <h1 id="hero-title" class="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg mb-4">
+                La qualité est une évidence, l'hygiène est un engagement.
+            </h1>
+            <div class="flex gap-4">
+                <button class="bg-white text-nomade-green px-6 py-2 rounded font-bold shadow-md hover:bg-gray-100">Qui sommes-nous ?</button>
+                <a href="https://wa.me/243820646482" class="bg-nomade-green text-white px-6 py-2 rounded font-bold shadow-md">Commander sur WhatsApp</a>
             </div>
         </div>
-    </main>
+    </section>
+
+    <section class="py-16 px-8 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h2 class="text-nomade-green font-bold text-3xl mb-6">Qui sommes-nous ?</h2>
+            <p id="about-text" class="text-gray-600 leading-relaxed text-lg">
+                La Tasse Nomade est le premier service de café ambulant à Kinshasa mettant l'accent sur l'hygiène et la qualité. Nous apportons l'énergie nécessaire à votre journée avec des produits authentiques et un service irréprochable.
+            </p>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-xl">
+            <img src="IMG_20260201_233025.png" class="w-full h-64 object-cover">
+        </div>
+    </section>
+
+    <section class="bg-nomade-light-bg py-16 px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-nomade-green font-bold text-3xl mb-12 text-center">Notre Menu Énergie & Santé</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-nomade-green/20 text-center shadow-sm">
+                    <h3 class="font-bold text-nomade-green mb-2">Boost</h3>
+                    <p class="text-xs text-gray-500">Cafés intenses pour dynamiser vos matinées.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-nomade-green/20 text-center shadow-sm">
+                    <h3 class="font-bold text-nomade-green mb-2">Vitalité</h3>
+                    <p class="text-xs text-gray-500">Thés et infusions riches en nutriments.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-nomade-green/20 text-center shadow-sm">
+                    <h3 class="font-bold text-nomade-green mb-2">Authenticité</h3>
+                    <p class="text-xs text-gray-500">Produits locaux sélectionnés avec soin.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-nomade-green/20 text-center shadow-sm">
+                    <h3 class="font-bold text-nomade-green mb-2">Douceur</h3>
+                    <p class="text-xs text-gray-500">Accompagnements sains et naturels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-8 max-w-6xl mx-auto">
+        <h2 class="text-nomade-green font-bold text-3xl mb-12">Engagement Hygiène</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-4 h-4 bg-nomade-green rounded-full"></div>
+                    <p class="font-bold text-lg">Inoxydable</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-4 h-4 bg-nomade-green rounded-full"></div>
+                    <p class="font-bold text-lg">Matériel certifié</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-4 h-4 bg-nomade-green rounded-full"></div>
+                    <p class="font-bold text-lg">Présentation soignée</p>
+                </div>
+            </div>
+            <div class="md:col-span-2 grid grid-cols-2 gap-4">
+                <img src="IMG_20260201_232921.png" class="rounded-xl h-40 w-full object-cover">
+                <img src="IMG_20260116_012845.png" class="rounded-xl h-40 w-full object-contain bg-gray-50">
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-nomade-dark text-white py-8 text-center">
+        <p class="text-sm">© 2026 La Tasse Nomade Kinshasa - +243 82 064 64 82</p>
+    </footer>
 
     <script>
         function updateLanguage(lang) {
             const dict = {
-                fr: { tag: "PREMIER SERVICE DE CAFÉ NOMADE À KINSHASA", title: "La qualité est une évidence.", menu: "NOTRE MENU", order: "Commander", spec1: "Nos Cafés", spec2: "Nos Thés" },
-                ln: { tag: "MOSALA YA LIBOSO YA CAFE NOMADE NA KINSHASA", title: "Malamu ezali polele.", menu: "BILOKO NA BISO", order: "Tinda commande", spec1: "Café na biso", spec2: "Ti na biso" },
-                en: { tag: "FIRST NOMADIC COFFEE SERVICE IN KINSHASA", title: "Quality is an evidence.", menu: "OUR MENU", order: "Order Now", spec1: "Our Coffees", spec2: "Our Teas" },
-                sw: { tag: "HUDUMA YA KWANZA YA KAHAWA NOMADE KINSHASA", title: "Ubora ni dhahiri.", menu: "ORODHA YETU", order: "Agiza Sasa", spec1: "Kahawa zetu", spec2: "Chai zetu" },
-                lu: { tag: "MUDIMU WA KUMPALA WA COFFEE NOMADE MU KINSHASA", title: "Buimpe budi bumueneka.", menu: "BIAKUDIA BIETU", order: "Lomba mpindieu", spec1: "Kafi wetu", spec2: "Ti wetu" },
-                kg: { tag: "KISALU YA NTETE YA CAFE NOMADE NA KINSHASA", title: "Kuzitusu kele kieleka.", menu: "BIMA NA BETO", order: "Lomba sikayo", spec1: "Kafe na beto", spec2: "Ti na beto" }
+                fr: { hero: "La qualité est une évidence, l'hygiène est un engagement.", about: "La Tasse Nomade est le premier service de café ambulant à Kinshasa mettant l'accent sur l'hygiène et la qualité." },
+                ln: { hero: "Malamu ezali polele, bopeto ezali ndai na biso.", about: "La Tasse Nomade ezali mosala ya liboso ya café na nzela na Kinshasa oyo etindaka bopeto mpe malamu." }
+                // Ajoutez les autres langues ici suivant le même modèle
             };
-
-            const data = dict[lang];
-            document.getElementById('service-tag').innerText = data.tag;
-            document.getElementById('main-title').innerText = data.title;
-            document.getElementById('txt-menu').innerText = data.menu;
-            document.getElementById('txt-order').innerText = data.order;
-            document.getElementById('spec-1').innerText = data.spec1;
-            document.getElementById('spec-2').innerText = data.spec2;
+            const data = dict[lang] || dict['fr'];
+            document.getElementById('hero-title').innerText = data.hero;
+            document.getElementById('about-text').innerText = data.about;
         }
-        window.onload = () => updateLanguage(document.getElementById('lang-select').value);
     </script>
 </body>
 </html>
