@@ -13,146 +13,84 @@ index.html
                     colors: {
                         'orange-nomade': '#F39200',
                         'green-nomade': '#009640',
+                        'dark-nomade': '#0B1323',
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-white font-sans text-slate-900">
+<body class="bg-white font-sans text-dark-nomade">
 
-    <header class="bg-white sticky top-0 z-50 shadow-sm">
-        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-green-nomade rounded-full flex items-center justify-center text-white font-bold text-xl">TN</div>
-                <span class="font-bold text-xl tracking-tight">La Tasse Nomade</span>
+    <header class="p-4 flex justify-between items-center bg-white sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-orange-nomade rounded-full flex items-center justify-center text-white font-bold text-2xl">T</div>
+            <div class="flex flex-col leading-tight font-bold text-lg uppercase">
+                <span>LA TASSE</span>
+                <span>NOMADE</span>
             </div>
-            
-            <div class="flex items-center gap-6">
-                <div class="hidden md:flex gap-6 font-medium text-slate-600 uppercase text-xs">
-                    <span id="nav-about">QUI SOMMES-NOUS</span>
-                    <span id="nav-menu">MENU</span>
-                    <span id="nav-contact">CONTACT</span>
-                </div>
-                <select onchange="updateLanguage(this.value)" class="bg-orange-nomade text-white text-xs font-bold py-2 px-4 rounded-full outline-none cursor-pointer">
-                    <option value="fr">FR ▼</option>
-                    <option value="en">EN (English)</option>
-                    <option value="ln">LN (Lingala)</option>
-                    <option value="sw">SW (Swahili)</option>
-                    <option value="lu">TSH (Tshiluba)</option>
-                    <option value="kg">KG (Kikongo)</option>
-                </select>
-            </div>
-        </nav>
+        </div>
+        <select onchange="updateLanguage(this.value)" class="bg-orange-nomade text-white text-xs font-bold py-2 px-4 rounded-full outline-none">
+            <option value="fr">FR ▼</option>
+            <option value="en">EN (English)</option>
+            <option value="ln">LN (Lingala)</option>
+            <option value="sw">SW (Swahili)</option>
+            <option value="lu">TSH (Tshiluba)</option>
+            <option value="kg">KG (Kikongo)</option>
+        </select>
     </header>
 
-    <section class="container mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-12">
-        <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
-            <div id="service-tag" class="text-green-nomade text-sm font-bold uppercase tracking-wider">
-                PREMIER SERVICE DE CAFÉ NOMADE À KINSHASA
-            </div>
-            <h1 id="main-title" class="text-5xl md:text-7xl font-bold leading-tight">
-                La qualité est une évidence.
-            </h1>
-            <p id="description" class="text-lg text-slate-600 max-w-lg mx-auto md:mx-0">
-                Découvrez l'expérience "La Tasse Nomade". Une pause café repensée pour Kinshasa.
-            </p>
-            
-            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                <a href="https://wa.me/243820646482" id="btn-order" class="bg-green-nomade text-white px-8 py-4 rounded-full font-bold hover:bg-green-700 transition-all">
-                    COMMANDER MAINTENANT
-                </a>
-            </div>
+    <main class="px-6 py-4 flex flex-col items-center">
+        <div class="w-full max-w-sm aspect-square rounded-[3rem] overflow-hidden mb-8 shadow-lg">
+            <img src="hero.jpg" class="w-full h-full object-cover" alt="La Tasse Nomade">
         </div>
-        <div class="w-full md:w-1/2">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" class="rounded-[2.5rem] shadow-2xl w-full aspect-square object-cover" alt="Coffee Hero">
-        </div>
-    </section>
 
-    <section class="bg-slate-50 py-16">
-        <div class="container mx-auto px-6">
-            <h2 id="gallery-title" class="text-3xl font-bold text-center mb-12 uppercase tracking-widest">Nos Spécialités</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-3xl shadow-lg text-center hover:scale-105 transition-transform">
-                    <img src="https://images.unsplash.com/photo-1541167760496-162955ed8a9f" class="rounded-2xl w-full h-48 object-cover mb-4">
-                    <h3 id="item-cafe" class="font-bold text-xl">Café Noir</h3>
-                </div>
-                <div class="bg-white p-6 rounded-3xl shadow-lg text-center hover:scale-105 transition-transform">
-                    <img src="https://images.unsplash.com/photo-1559305616-3f99cd43e353" class="rounded-2xl w-full h-48 object-cover mb-4">
-                    <h3 id="item-the" class="font-bold text-xl">Thé Bulukutu</h3>
-                </div>
-                <div class="bg-white p-6 rounded-3xl shadow-lg text-center hover:scale-105 transition-transform">
-                    <img src="https://images.unsplash.com/photo-1534706936160-d5ee67737249" class="rounded-2xl w-full h-48 object-cover mb-4">
-                    <h3 id="item-lait" class="font-bold text-xl">Café au Lait</h3>
-                </div>
+        <div id="service-tag" class="bg-green-50 text-green-nomade text-[10px] font-bold px-4 py-1 rounded-full mb-6 uppercase">
+            PREMIER SERVICE DE CAFÉ NOMADE À KINSHASA
+        </div>
+
+        <h1 id="main-title" class="text-4xl font-extrabold text-center mb-10 leading-tight">
+            La qualité est une évidence.
+        </h1>
+
+        <div class="w-full max-w-xs space-y-4 mb-16">
+            <button class="w-full bg-dark-nomade text-white py-4 rounded-full font-bold text-lg flex justify-center items-center gap-2">
+                <span id="txt-menu">BILOKO NA BISO</span> ▼
+            </button>
+            <button class="w-full border-2 border-slate-100 text-dark-nomade py-4 rounded-full font-bold text-lg flex justify-center items-center gap-2">
+                <span id="txt-order">Tinda commande</span> ▼
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 w-full max-w-md">
+            <div class="text-center">
+                <img src="cafe.jpg" class="w-full h-48 object-cover rounded-[2rem] mb-3 shadow-md">
+                <p id="spec-cafe" class="font-bold text-xl">Café Noir</p>
+            </div>
+            <div class="text-center">
+                <img src="bulukutu.jpg" class="w-full h-48 object-cover rounded-[2rem] mb-3 shadow-md">
+                <p id="spec-the" class="font-bold text-xl text-green-nomade">Thé Bulukutu</p>
             </div>
         </div>
-    </section>
+    </main>
 
     <script>
         function updateLanguage(lang) {
             const dict = {
-                fr: {
-                    about: "QUI SOMMES-NOUS", menu: "MENU", contact: "CONTACT",
-                    tag: "PREMIER SERVICE DE CAFÉ NOMADE À KINSHASA",
-                    title: "La qualité est une évidence.",
-                    desc: "Découvrez l'expérience \"La Tasse Nomade\". Une pause café repensée pour Kinshasa.",
-                    order: "COMMANDER MAINTENANT", gallery: "NOS SPÉCIALITÉS",
-                    cafe: "Café Noir", the: "Thé Bulukutu", lait: "Café au Lait"
-                },
-                en: {
-                    about: "ABOUT US", menu: "MENU", contact: "CONTACT",
-                    tag: "FIRST NOMADIC COFFEE SERVICE IN KINSHASA",
-                    title: "Quality is an evidence.",
-                    desc: "Discover the \"La Tasse Nomade\" experience. A coffee break redesigned for Kinshasa.",
-                    order: "ORDER NOW", gallery: "OUR SPECIALTIES",
-                    cafe: "Black Coffee", the: "Bulukutu Tea", lait: "Milk Coffee"
-                },
-                ln: {
-                    about: "BISO EZALI BANANI", menu: "BILOKO", contact: "KOBELELA BISO",
-                    tag: "MOSALA YA LIBOSO YA CAFE NOMADE NA KINSHASA",
-                    title: "Malamu ezali polele.",
-                    desc: "Meka lomekano ya \"La Tasse Nomade\". Pema moko ya café ebongisami mpo na Kinshasa.",
-                    order: "TINDA COMMANDE SIKOYO", gallery: "BILOKO NA BISO",
-                    cafe: "Café Moyindo", the: "Ti ya Bulukutu", lait: "Café na miliki"
-                },
-                sw: {
-                    about: "KUHUSU SISI", menu: "ORODHA", contact: "MAWASILIANO",
-                    tag: "HUDUMA YA KWANZA YA KAHAWA NOMADE KINSHASA",
-                    title: "Ubora ni dhahiri.",
-                    desc: "Gundua uzoefu wa \"La Tasse Nomade\". Mapumziko ya kahawa yaliyoundwa upya kwa Kinshasa.",
-                    order: "AGIZA SASA", gallery: "VIBURUDISHO VYETU",
-                    cafe: "Kahawa Nyeusi", the: "Chai ya Bulukutu", lait: "Kahawa ya Maziwa"
-                },
-                lu: {
-                    about: "BIDI BUETU", menu: "BIAKUDIA", contact: "KUTUYUKILA",
-                    tag: "MUDIMU WA KUMPALA WA COFFEE NOMADE MU KINSHASA",
-                    title: "Buimpe budi bumueneka.",
-                    desc: "Meka lomekano lua \"La Tasse Nomade\". Pema wa café mpo na Kinshasa.",
-                    order: "LOMBA MPINDIEU", gallery: "BIAKUDIA BIETU",
-                    cafe: "Kafi mufike", the: "Ti wa Bulukutu", lait: "Kafi wa mabele"
-                },
-                kg: {
-                    about: "BETO KELE BANANI", menu: "BIMA", contact: "SOLOLA NA BETO",
-                    tag: "KISALU YA NTETE YA CAFE NOMADE NA KINSHASA",
-                    title: "Kuzitusu kele kieleka.",
-                    desc: "Meka lomekano ya \"La Tasse Nomade\". Kupema moko ya café yidiki mpo na Kinshasa.",
-                    order: "LOMBA SIKAYO", gallery: "BIMA NA BETO",
-                    cafe: "Kafe ya ndombe", the: "Ti ya Bulukutu", lait: "Kafe ya miliki"
-                }
+                fr: { tag: "PREMIER SERVICE DE CAFÉ NOMADE À KINSHASA", title: "La qualité est une évidence.", menu: "NOTRE MENU", order: "Commander", cafe: "Café Noir", the: "Thé Bulukutu" },
+                ln: { tag: "MOSALA YA LIBOSO YA CAFE NOMADE NA KINSHASA", title: "Malamu ezali polele.", menu: "BILOKO NA BISO", order: "Tinda commande", cafe: "Café Moyindo", the: "Ti ya Bulukutu" },
+                en: { tag: "FIRST NOMADIC COFFEE SERVICE IN KINSHASA", title: "Quality is an evidence.", menu: "OUR MENU", order: "Order Now", cafe: "Black Coffee", the: "Bulukutu Tea" },
+                sw: { tag: "HUDUMA YA KWANZA YA KAHAWA NOMADE KINSHASA", title: "Ubora ni dhahiri.", menu: "ORODHA YETU", order: "Agiza Sasa", cafe: "Kahawa Nyeusi", the: "Chai ya Bulukutu" },
+                lu: { tag: "MUDIMU WA KUMPALA WA COFFEE NOMADE MU KINSHASA", title: "Buimpe budi bumueneka.", menu: "BIAKUDIA BIETU", order: "Lomba mpindieu", cafe: "Kafi mufike", the: "Ti wa Bulukutu" },
+                kg: { tag: "KISALU YA NTETE YA CAFE NOMADE NA KINSHASA", title: "Kuzitusu kele kieleka.", menu: "BIMA NA BETO", order: "Lomba sikayo", cafe: "Kafe ya ndombe", the: "Ti ya Bulukutu" }
             };
 
-            document.getElementById('nav-about').innerText = dict[lang].about;
-            document.getElementById('nav-menu').innerText = dict[lang].menu;
-            document.getElementById('nav-contact').innerText = dict[lang].contact;
             document.getElementById('service-tag').innerText = dict[lang].tag;
             document.getElementById('main-title').innerText = dict[lang].title;
-            document.getElementById('description').innerText = dict[lang].desc;
-            document.getElementById('btn-order').innerText = dict[lang].order;
-            document.getElementById('gallery-title').innerText = dict[lang].gallery;
-            document.getElementById('item-cafe').innerText = dict[lang].cafe;
-            document.getElementById('item-the').innerText = dict[lang].the;
-            document.getElementById('item-lait').innerText = dict[lang].lait;
+            document.getElementById('txt-menu').innerText = dict[lang].menu;
+            document.getElementById('txt-order').innerText = dict[lang].order;
+            document.getElementById('spec-cafe').innerText = dict[lang].cafe;
+            document.getElementById('spec-the').innerText = dict[lang].the;
         }
     </script>
 </body>
